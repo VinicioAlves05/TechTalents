@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro</title>
+  <link rel="stylesheet" href="cadastro.css">
+</head>
+<body>
+  <div class="form-container">
+    <h2>CADASTRO</h2>
+    <form>
+      <input type="text" placeholder="Nome completo" required>
+      <input type="email" placeholder="Celular ou e-mail" required>
+      <input type="password" placeholder="Senha" required>
+
+      <label>Data de nascimento:</label>
+      <div class="date-select">
+        <select id="dia" required>
+          <option value="">Dia</option>
+        </select>
+
+        <select id="mes" required>
+          <option value="">Mês</option>
+        </select>
+
+        <select id="ano" required>
+          <option value="">Ano</option>
+        </select>
+      </div>
+
+      <label>Gênero:</label>
+      <div class="gender-options">
+        <label><input type="radio" name="genero" value="F"> F</label>
+        <label><input type="radio" name="genero" value="M"> M</label>
+        <label><input type="radio" name="genero" value="Outro"> Outro</label>
+      </div>
+
+      <button type="submit">CADASTRA-SE</button>
+    </form>
+  </div>
+
+  <script>
+    
+    const selectDia = document.getElementById("dia");
+    for (let i = 1; i <= 31; i++) {
+      const option = document.createElement("option");
+      option.value = i;
+      option.textContent = i;
+      selectDia.appendChild(option);
+    }
+
+   
+    const selectMes = document.getElementById("mes");
+    const meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+    meses.forEach((mes, index) => {
+      const option = document.createElement("option");
+      option.value = index + 1;
+      option.textContent = mes;
+      selectMes.appendChild(option);
+    });
+
+    
+    const selectAno = document.getElementById("ano");
+    for (let ano = 2025; ano >= 1900; ano--) {
+      const option = document.createElement("option");
+      option.value = ano;
+      option.textContent = ano;
+      selectAno.appendChild(option);
+    }
+  </script>
+</body>
+</html>
