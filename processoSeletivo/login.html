@@ -7,9 +7,41 @@
   <link rel="stylesheet" href="login.css" />
 </head>
 <body>
-  <header>
-    <img src="logo.jpg" alt="Tech Talents Logo" class="logo"/>
-  </header>
+
+  <header class="header">
+        <div class="container">
+         
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item">
+                        <a href="#perfil" class="nav-link" data-section="perfil">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#vagas" class="nav-link" data-section="vagas">Vagas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#testes" class="nav-link" data-section="testes">Testes</a>
+                    </li>
+                </ul>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    ☰
+                </button>
+            </nav>
+
+          
+            <div class="logo-container" onclick="goHome()">
+                
+                <img src="logo.png" alt="Tech Talents Logo" class="logo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                
+            </div>
+
+          
+            <div class="auth-buttons">
+                <button class="btn btn-login" onclick="handleLogin()">Log in</button>
+                <button class="btn btn-register" onclick="handleRegister()">Register</button>
+            </div>
+        </div>
+    </header>
 
   <main>
     <div class="login-container">
@@ -28,21 +60,35 @@
     </div>
   </main>
 
-  <footer>
-    <div class="footer-links">
-      <div>
-        <strong>Perfil</strong><br />
-        Minhas Candidaturas<br />
-        Currículo
-      </div>
-      <div>
-        <strong>Recursos</strong><br />
-        Vagas<br />
-        Testes
-      </div>
-    </div>
-    <img src="logo.jpg" alt="Tech Talents Logo" class="footer-logo"/>
-    <p>&copy; 2025 Tech Talents. Todos os direitos reservados. | <a href="#">Política de Privacidade</a> | <a href="#">Termos de Serviço</a></p>
-  </footer>
+  <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Sou</h4>
+                    <ul>
+                        <li><a href="#">Minhas Candidaturas</a></li>
+                        <li><a href="#">Currículo</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="#">Vagas</a></li>
+                        <li><a href="#">Testes</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                     <img src="logo.png" alt="Tech Talents Logo" class="logo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                
+                </div>
+                <div class="footer-info">
+                    © 2023 Talentos. All rights reserved. | Privacy Policy | Terms of Service
+                </div>
+            </div>
+        </div>
+    </footer>
+    
 </body>
 </html>
