@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Currículo - Tech Talents</title>
+    <link rel="stylesheet" href="../CSS/curriculo.css">
+    <script src="../JS/curriculo.js"></script>
+</head>
+<body>
+    <!-- Header -->
+<header class="header">
+    <div class="container">
+        <!-- Navigation Menu -->
+        <nav>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="#perfil" class="nav-link" data-section="perfil">Perfil</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#vagas" class="nav-link" data-section="vagas">Vagas</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#testes" class="nav-link" data-section="testes">Testes</a>
+                </li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                ☰
+            </button>
+        </nav>
+        
+        <!-- Logo -->
+        <div class="logo-container" onclick="goHome()">
+            <img src="../IMG/logo.png" alt="Tech Talents Logo" class="logo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <!-- Texto de fallback caso a imagem não carregue -->
+            <span class="logo-text">TECH TALENTS</span>
+        </div>
+        
+        <!-- Auth Buttons -->
+        <div class="auth-buttons">
+            <button class="btn btn-login" onclick="handleLogin()">Log in</button>
+            <button class="btn btn-register" onclick="handleRegister()">Register</button>
+        </div>
+    </div>
+</header>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <div class="form-container">
+            <h1 class="form-title">Cadastro de Currículo</h1>
+            
+            <form id="curriculumForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="nomeCompleto">Nome completo</label>
+                        <input type="text" id="nomeCompleto" name="nomeCompleto" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cpf">CPF</label>
+                        <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="endereco">Endereço</label>
+                        <input type="text" id="endereco" name="endereco" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="estadoCivil">Estado Civil</label>
+                        <select id="estadoCivil" name="estadoCivil" required>
+                            <option value="">Selecione...</option>
+                            <option value="solteiro">Solteiro(a)</option>
+                            <option value="casado">Casado(a)</option>
+                            <option value="divorciado">Divorciado(a)</option>
+                            <option value="viuvo">Viúvo(a)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="experiencia">Experiência</label>
+                        <textarea id="experiencia" name="experiencia" placeholder="Descreva sua experiência profissional..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="escolaridade">Escolaridade</label>
+                        <select type="text" id="escolaridade" name="escolaridade" required>
+                        <option value="">Selecione...</option>
+                            <option value="E.M inc">Ensino Médio incompleto</option>
+                            <option value="E.M comp">Ensino Médio completo</option>
+                            <option value="E.S inc">Ensino Superior incompleto</option>
+                            <option value="E.S cur">Ensino Superior Cursando</option>  
+                             <option value="E.S comp">Ensino Superior Completo</option> 
+                        </select>  
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="cursos">Cursos</label>
+                        <textarea id="cursos" name="cursos" placeholder="Liste seus cursos e certificações..."></textarea>
+                    </div>
+                </div>
+                
+                <!-- File Upload Section -->
+                <div class="file-upload-section">
+                    <label class="file-upload-label">Anexe seu currículo</label>
+                    <div class="file-upload-container">
+                        <button type="button" class="file-upload-btn" onclick="document.getElementById('curriculo').click()">
+                            escolher arquivo
+                        </button>
+                        <input type="file" id="curriculo" name="curriculo" class="file-input" accept=".pdf,.doc,.docx" onchange="updateFileName(this)">
+                    </div>
+                    <div id="fileName" class="file-name"></div>
+                </div>
+                
+                <!-- Submit Button -->
+                <div class="submit-container">
+                    <button type="submit" class="submit-btn">Enviar dados</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Sou</h4>
+                    <ul>
+                        <li><a href="../View/vagas.html">Minhas Candidaturas</a></li>
+                        <li><a href="../View/curriculo.html">Currículo</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="../View/vagas.html">Vagas</a></li>
+                        <li><a href="../View/pgteste.html">Testes</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                     <img src="../IMG/logo.png" alt="Tech Talents Logo" class="logo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                
+                </div>
+                <div class="footer-info">
+                    © 2023 Talentos. All rights reserved. | Privacy Policy | Terms of Service
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
