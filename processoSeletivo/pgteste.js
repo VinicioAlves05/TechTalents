@@ -14,21 +14,7 @@
                 answer: null
             },
             {
-                id: 2,
-                type: "Código",
-                title: "Implemente uma função que remove duplicatas de um array",
-                description: "Escreva uma função JavaScript que receba um array e retorne um novo array sem elementos duplicados.",
-                code: `// Exemplo de uso:
-// removeDuplicates([1, 2, 2, 3, 4, 4, 5])
-// Deve retornar: [1, 2, 3, 4, 5]
-
-function removeDuplicates(arr) {
-    // Seu código aqui
-}`,
-                answer: null,
-                isTextArea: true
-            },
-            {
+              
                 id: 3,
                 type: "Múltipla Escolha",
                 title: "O que é o Virtual DOM no React?",
@@ -42,23 +28,7 @@ function removeDuplicates(arr) {
                 answer: null
             },
             {
-                id: 4,
-                type: "Código",
-                title: "CSS Flexbox - Centralize um elemento",
-                description: "Escreva o CSS necessário para centralizar um elemento tanto horizontal quanto verticalmente usando Flexbox.",
-                code: `.container {
-    /* Seu código CSS aqui */
-}
-
-.centered-element {
-    width: 200px;
-    height: 100px;
-    background: blue;
-}`,
-                answer: null,
-                isTextArea: true
-            },
-            {
+               
                 id: 5,
                 type: "Múltipla Escolha",
                 title: "Qual é o propósito do useEffect no React?",
@@ -72,21 +42,7 @@ function removeDuplicates(arr) {
                 answer: null
             },
             {
-                id: 6,
-                type: "Código",
-                title: "Async/Await - Requisição HTTP",
-                description: "Implemente uma função que faz uma requisição HTTP usando async/await e trata possíveis erros.",
-                code: `// Implemente uma função que busca dados de uma API
-// URL: https://api.exemplo.com/users
-// Trate erros adequadamente
-
-async function fetchUsers() {
-    // Seu código aqui
-}`,
-                answer: null,
-                isTextArea: true
-            },
-            {
+               
                 id: 7,
                 type: "Múltipla Escolha",
                 title: "O que é Hoisting em JavaScript?",
@@ -100,24 +56,7 @@ async function fetchUsers() {
                 answer: null
             },
             {
-                id: 8,
-                type: "Código",
-                title: "Manipulação de Arrays - Filter e Map",
-                description: "Use filter e map para processar um array de objetos representando usuários.",
-                code: `const users = [
-    { name: 'João', age: 25, active: true },
-    { name: 'Maria', age: 17, active: false },
-    { name: 'Pedro', age: 30, active: true },
-    { name: 'Ana', age: 16, active: true }
-];
-
-// Retorne apenas os nomes dos usuários ativos e maiores de idade
-const result = users
-    // Seu código aqui`,
-                answer: null,
-                isTextArea: true
-            },
-            {
+             
                 id: 9,
                 type: "Múltipla Escolha",
                 title: "Qual é a diferença entre == e === em JavaScript?",
@@ -130,28 +69,7 @@ const result = users
                 ],
                 answer: null
             },
-            {
-                id: 10,
-                type: "Código",
-                title: "Closure em JavaScript",
-                description: "Implemente uma função que demonstra o conceito de closure criando um contador privado.",
-                code: `// Crie uma função que retorna um objeto com métodos
-// para incrementar, decrementar e obter o valor de um contador
-// O valor do contador deve ser privado (não acessível diretamente)
-
-function createCounter() {
-    // Seu código aqui
-}
-
-// Exemplo de uso:
-// const counter = createCounter();
-// counter.increment(); // 1
-// counter.increment(); // 2
-// counter.decrement(); // 1
-// counter.getValue(); // 1`,
-                answer: null,
-                isTextArea: true
-            }
+         
         ];
 
         // Test state
