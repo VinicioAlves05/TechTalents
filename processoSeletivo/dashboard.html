@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Sistema de Vagas</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+   
+      <header class="header2">
+        <div class="container">
+         
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item">
+                        <a href="#perfil" class="nav-link" data-section="perfil">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="vagas.html" class="nav-link" data-section="vagas">Vagas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pgteste.html" class="nav-link" data-section="testes">Testes</a>
+                    </li>
+                </ul>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    ☰
+                </button>
+            </nav>
+
+          
+            <div class="logo-container" onclick="goHome()">
+                
+                <img src="logo.png" alt="Tech Talents Logo" class="logo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                
+            </div>
+
+          
+            <div class="auth-buttons">
+              <a href="login.html"> <button class="btn-login" onclick="handleLogin()">Login</button></a>
+               <a href="cadastro.html"> <button class="btn-register" onclick="handleRegister()">Cadastre-se</button></a>
+            </div>
+        </div>
+    </header>
+   
+
+    <div class="dashboard-container">
+      
+        <header class="header">
+            <div class="header-content">
+                <h1><i class="fas fa-chart-line"></i> Dashboard - Sistema de Vagas</h1>
+                <button class="btn-primary" id="btnCadastrarVaga">
+                    <i class="fas fa-plus"></i> Cadastrar Nova Vaga
+                </button>
+            </div>
+        </header>
+
+     
+        <section class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon vagas">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="totalVagas">127</h3>
+                        <p>Vagas Cadastradas</p>
+                        <span class="stat-change positive">+12% este mês</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon candidatos">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="totalCandidatos">1,543</h3>
+                        <p>Candidatos</p>
+                        <span class="stat-change positive">+8% este mês</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon testes">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="totalTestes">89</h3>
+                        <p>Testes Aplicados</p>
+                        <span class="stat-change negative">-3% este mês</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon aprovados">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="totalAprovados">45</h3>
+                        <p>Aprovados</p>
+                        <span class="stat-change positive">+15% este mês</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Charts Section -->
+        <section class="charts-section">
+            <div class="charts-grid">
+                <!-- Gráfico de Vagas por Categoria -->
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Vagas por Categoria</h3>
+                        <select id="periodoVagas">
+                            <option value="mes">Este Mês</option>
+                            <option value="trimestre">Trimestre</option>
+                            <option value="ano">Este Ano</option>
+                        </select>
+                    </div>
+                    <div class="custom-chart">
+                        <div class="chart-item">
+                            <div class="chart-label">
+                                <span class="chart-color" style="background: #667eea;"></span>
+                                <span>Desenvolvimento</span>
+                            </div>
+                            <div class="chart-bar">
+                                <div class="chart-fill" style="width: 75%; background: #667eea;" data-value="45"></div>
+                            </div>
+                            <span class="chart-value">45</span>
+                        </div>
+                        <div class="chart-item">
+                            <div class="chart-label">
+                                <span class="chart-color" style="background: #764ba2;"></span>
+                                <span>Design</span>
+                            </div>
+                            <div class="chart-bar">
+                                <div class="chart-fill" style="width: 38%; background: #764ba2;" data-value="23"></div>
+                            </div>
+                            <span class="chart-value">23</span>
+                        </div>
+                        <div class="chart-item">
+                            <div class="chart-label">
+                                <span class="chart-color" style="background: #f093fb;"></span>
+                                <span>Marketing</span>
+                            </div>
+                            <div class="chart-bar">
+                                <div class="chart-fill" style="width: 30%; background: #f093fb;" data-value="18"></div>
+                            </div>
+                            <span class="chart-value">18</span>
+                        </div>
+                        <div class="chart-item">
+                            <div class="chart-label">
+                                <span class="chart-color" style="background: #f5576c;"></span>
+                                <span>Vendas</span>
+                            </div>
+                            <div class="chart-bar">
+                                <div class="chart-fill" style="width: 25%; background: #f5576c;" data-value="15"></div>
+                            </div>
+                            <span class="chart-value">15</span>
+                        </div>
+                        <div class="chart-item">
+                            <div class="chart-label">
+                                <span class="chart-color" style="background: #4facfe;"></span>
+                                <span>RH</span>
+                            </div>
+                            <div class="chart-bar">
+                                <div class="chart-fill" style="width: 20%; background: #4facfe;" data-value="12"></div>
+                            </div>
+                            <span class="chart-value">12</span>
+                        </div>
+                        <div class="chart-item">
+                            <div class="chart-label">
+                                <span class="chart-color" style="background: #00f2fe;"></span>
+                                <span>Financeiro</span>
+                            </div>
+                            <div class="chart-bar">
+                                <div class="chart-fill" style="width: 23%; background: #00f2fe;" data-value="14"></div>
+                            </div>
+                            <span class="chart-value">14</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gráfico de Candidatos por Status -->
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Candidatos por Status</h3>
+                        <select id="periodoCandidatos">
+                            <option value="mes">Este Mês</option>
+                            <option value="trimestre">Trimestre</option>
+                            <option value="ano">Este Ano</option>
+                        </select>
+                    </div>
+                    <div class="donut-chart">
+                        <div class="donut-center">
+                            <div class="donut-total">1,543</div>
+                            <div class="donut-label">Total</div>
+                        </div>
+                        <div class="donut-segments">
+                            <div class="donut-segment" style="--percentage: 40; --color: #667eea;">
+                                <span class="segment-label">Em Análise</span>
+                                <span class="segment-value">620</span>
+                            </div>
+                            <div class="donut-segment" style="--percentage: 22; --color: #43e97b;">
+                                <span class="segment-label">Aprovados</span>
+                                <span class="segment-value">345</span>
+                            </div>
+                            <div class="donut-segment" style="--percentage: 18; --color: #f5576c;">
+                                <span class="segment-label">Reprovados</span>
+                                <span class="segment-value">278</span>
+                            </div>
+                            <div class="donut-segment" style="--percentage: 20; --color: #4facfe;">
+                                <span class="segment-label">Em Teste</span>
+                                <span class="segment-value">300</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gráfico de Evolução -->
+                <div class="chart-container full-width">
+                    <div class="chart-header">
+                        <h3>Evolução Mensal - Vagas vs Candidatos</h3>
+                        <div class="chart-controls">
+                            <button class="btn-chart active" data-period="6">6 Meses</button>
+                            <button class="btn-chart" data-period="12">12 Meses</button>
+                        </div>
+                    </div>
+                    <div class="line-chart" id="lineChart">
+                        <div class="line-chart-legend">
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #667eea;"></span>
+                                <span>Vagas</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #f5576c;"></span>
+                                <span>Candidatos</span>
+                            </div>
+                        </div>
+                        <div class="line-chart-container">
+                            <div class="line-chart-grid">
+                                <div class="grid-line"></div>
+                                <div class="grid-line"></div>
+                                <div class="grid-line"></div>
+                                <div class="grid-line"></div>
+                                <div class="grid-line"></div>
+                            </div>
+                            <div class="line-chart-data" id="lineChartData">
+                                <!-- Dados serão inseridos via JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Activity -->
+        <section class="activity-section">
+            <div class="activity-container">
+                <h3><i class="fas fa-clock"></i> Atividades Recentes</h3>
+                <div class="activity-list" id="activityList">
+                    <div class="activity-item">
+                        <div class="activity-icon new">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="activity-content">
+                            <p><strong>Nova vaga cadastrada:</strong> Desenvolvedor Frontend</p>
+                            <span class="activity-time">Há 2 horas</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon candidate">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="activity-content">
+                            <p><strong>Novo candidato:</strong> João Silva se candidatou para Backend Developer</p>
+                            <span class="activity-time">Há 4 horas</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon test">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <div class="activity-content">
+                            <p><strong>Teste concluído:</strong> Maria Santos - Teste de JavaScript</p>
+                            <span class="activity-time">Há 6 horas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal Cadastro de Vaga -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2><i class="fas fa-briefcase"></i> Cadastrar Nova Vaga</h2>
+                <button class="btn-close" id="btnFecharModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        
+            <form class="modal-form" id="formCadastroVaga">
+                <!-- Seção: Informações Básicas -->
+                <div class="form-section">
+                    <h3 class="form-section-title">
+                        <i class="fas fa-info-circle"></i>
+                        Informações Básicas
+                    </h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="tituloVaga">
+                                Título da Vaga
+                                <span class="required">*</span>
+                            </label>
+                            <input type="text" id="tituloVaga" name="titulo" required 
+                                   placeholder="Ex: Desenvolvedor Frontend React">
+                        </div>
+                        <div class="form-group">
+                            <label for="categoriaVaga">
+                                Categoria
+                                <span class="required">*</span>
+                            </label>
+                            <select id="categoriaVaga" name="categoria" required>
+                                <option value="">Selecione uma categoria</option>
+                                <option value="desenvolvimento">💻 Desenvolvimento</option>
+                                <option value="design">🎨 Design</option>
+                                <option value="marketing">📢 Marketing</option>
+                                <option value="vendas">💼 Vendas</option>
+                                <option value="rh">👥 Recursos Humanos</option>
+                                <option value="financeiro">💰 Financeiro</option>
+                                <option value="operacoes">⚙️ Operações</option>
+                                <option value="suporte">🎧 Suporte</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nivelVaga">
+                                Nível de Experiência
+                                <span class="required">*</span>
+                            </label>
+                            <select id="nivelVaga" name="nivel" required>
+                                <option value="">Selecione o nível</option>
+                                <option value="estagio">🌱 Estágio</option>
+                                <option value="junior">🚀 Júnior (0-2 anos)</option>
+                                <option value="pleno">⭐ Pleno (2-5 anos)</option>
+                                <option value="senior">🏆 Sênior (5+ anos)</option>
+                                <option value="especialista">💎 Especialista</option>
+                                <option value="lider">👑 Liderança</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="salarioVaga">Faixa Salarial (R$)</label>
+                            <input type="number" id="salarioVaga" name="salario" min="0" step="100"
+                                   placeholder="Ex: 5000">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seção: Localização e Modalidade -->
+                <div class="form-section">
+                    <h3 class="form-section-title">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Localização e Modalidade
+                    </h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="localVaga">
+                                Modalidade de Trabalho
+                                <span class="required">*</span>
+                            </label>
+                            <select id="localVaga" name="local" required>
+                                <option value="">Selecione a modalidade</option>
+                                <option value="presencial">🏢 Presencial</option>
+                                <option value="remoto">🏠 Remoto</option>
+                                <option value="hibrido">🔄 Híbrido</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="cidadeVaga">Cidade</label>
+                            <input type="text" id="cidadeVaga" name="cidade"
+                                   placeholder="Ex: São Paulo, SP">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seção: Descrição da Vaga -->
+                <div class="form-section">
+                    <h3 class="form-section-title">
+                        <i class="fas fa-file-alt"></i>
+                        Descrição da Vaga
+                    </h3>
+                    
+                    <div class="form-group full-width">
+                        <label for="descricaoVaga">
+                            Descrição Detalhada
+                            <span class="required">*</span>
+                        </label>
+                        <textarea id="descricaoVaga" name="descricao" rows="5" required 
+                                  placeholder="Descreva as principais responsabilidades, atividades do dia a dia e o que esperamos do candidato..."></textarea>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="requisitosVaga">Requisitos e Qualificações</label>
+                        <textarea id="requisitosVaga" name="requisitos" rows="4" 
+                                  placeholder="Liste os requisitos técnicos, experiências necessárias, formação, certificações, etc..."></textarea>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="beneficiosVaga">Benefícios Oferecidos</label>
+                        <textarea id="beneficiosVaga" name="beneficios" rows="3" 
+                                  placeholder="Ex: Vale alimentação, plano de saúde, home office, horário flexível..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Seção: Configurações -->
+                <div class="form-section">
+                    <h3 class="form-section-title">
+                        <i class="fas fa-cog"></i>
+                        Configurações da Vaga
+                    </h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="dataLimite">Data Limite para Candidatura</label>
+                            <input type="date" id="dataLimite" name="dataLimite">
+                        </div>
+                        <div class="form-group">
+                            <label for="statusVaga">
+                                Status da Vaga
+                                <span class="required">*</span>
+                            </label>
+                            <select id="statusVaga" name="status" required>
+                                <option value="ativa">✅ Ativa</option>
+                                <option value="pausada">⏸️ Pausada</option>
+                                <option value="rascunho">📝 Rascunho</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="vagasDisponiveis">Número de Vagas</label>
+                            <input type="number" id="vagasDisponiveis" name="numeroVagas" min="1" value="1"
+                                   placeholder="Quantas vagas disponíveis?">
+                        </div>
+                        <div class="form-group">
+                            <label for="urgenciaVaga">Urgência</label>
+                            <select id="urgenciaVaga" name="urgencia">
+                                <option value="normal">🟢 Normal</option>
+                                <option value="alta">🟡 Alta</option>
+                                <option value="urgente">🔴 Urgente</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" id="btnCancelar">
+                        <i class="fas fa-times"></i> Cancelar
+                    </button>
+                    <button type="submit" class="btn-primary" id="btnSalvarVaga">
+                        <i class="fas fa-save"></i> Cadastrar Vaga
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+     <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Sou</h4>
+                    <ul>
+                        <li><a href="vagas.html">Minhas Candidaturas</a></li>
+                        <li><a href="curriculo.html">Currículo</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="vagas.html">Vagas</a></li>
+                        <li><a href="pgteste.html">Testes</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                     <img src="logo.png" alt="Tech Talents Logo" class="logo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                
+                </div>
+                <div class="footer-info">
+                    © 2023 Talentos. All rights reserved. | Privacy Policy | Terms of Service
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

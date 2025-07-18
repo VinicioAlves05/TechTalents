@@ -4,24 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Currículo - Tech Talents</title>
-    <link rel="stylesheet" href="../CSS/curriculo.css">
-    <script src="../JS/curriculo.js"></script>
+    <link rel="stylesheet" href="curriculo.css">
+    <script src="curriculo.js"></script>
 </head>
 <body>
-    <!-- Header -->
+   
 <header class="header">
     <div class="container">
-        <!-- Navigation Menu -->
+       
         <nav>
             <ul class="nav-menu" id="navMenu">
                 <li class="nav-item">
                     <a href="#perfil" class="nav-link" data-section="perfil">Perfil</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#vagas" class="nav-link" data-section="vagas">Vagas</a>
+                    <a href="vagas.html" class="nav-link" data-section="vagas">Vagas</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#testes" class="nav-link" data-section="testes">Testes</a>
+                    <a href="pgteste.html" class="nav-link" data-section="testes">Testes</a>
                 </li>
             </ul>
             <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -29,22 +29,23 @@
             </button>
         </nav>
         
-        <!-- Logo -->
+      
         <div class="logo-container" onclick="goHome()">
-            <img src="../IMG/logo.png" alt="Tech Talents Logo" class="logo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <!-- Texto de fallback caso a imagem não carregue -->
+            <img src="logo.png"  class="logo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          
             <span class="logo-text">TECH TALENTS</span>
         </div>
         
-        <!-- Auth Buttons -->
+      
         <div class="auth-buttons">
-            <button class="btn btn-login" onclick="handleLogin()">Log in</button>
-            <button class="btn btn-register" onclick="handleRegister()">Register</button>
+             <a href="login.html"><button class="btn btn-login" onclick="handleLogin()">Login</button></a> 
+          <a href="cadastro.html">  <button class="btn btn-register" onclick="handleRegister()">Cadastre-se</button></a>
+          
         </div>
     </div>
 </header>
 
-    <!-- Main Content -->
+   
     <div class="main-container">
         <div class="form-container">
             <h1 class="form-title">Cadastro de Currículo</h1>
@@ -126,21 +127,21 @@
                 <div class="footer-column">
                     <h4>Sou</h4>
                     <ul>
-                        <li><a href="../View/vagas.html">Minhas Candidaturas</a></li>
-                        <li><a href="../View/curriculo.html">Currículo</a></li>
+                        <li><a href="vagas.html">Minhas Candidaturas</a></li>
+                        <li><a href="curriculo.html">Currículo</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Empresa</h4>
                     <ul>
-                        <li><a href="../View/vagas.html">Vagas</a></li>
-                        <li><a href="../View/pgteste.html">Testes</a></li>
+                        <li><a href="vagas.html">Vagas</a></li>
+                        <li><a href="pgteste.html">Testes</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
                 <div class="footer-logo">
-                     <img src="../IMG/logo.png" alt="Tech Talents Logo" class="logo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                     <img src="logo.png" alt="Tech Talents Logo" class="logo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                 
                 </div>
                 <div class="footer-info">

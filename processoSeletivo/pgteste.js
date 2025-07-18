@@ -15,7 +15,7 @@
             },
             {
               
-                id: 3,
+                id: 2,
                 type: "Múltipla Escolha",
                 title: "O que é o Virtual DOM no React?",
                 description: "Escolha a definição mais precisa sobre o Virtual DOM.",
@@ -29,7 +29,7 @@
             },
             {
                
-                id: 5,
+                id: 3,
                 type: "Múltipla Escolha",
                 title: "Qual é o propósito do useEffect no React?",
                 description: "Selecione a descrição mais adequada para o hook useEffect.",
@@ -43,7 +43,7 @@
             },
             {
                
-                id: 7,
+                id: 4,
                 type: "Múltipla Escolha",
                 title: "O que é Hoisting em JavaScript?",
                 description: "Escolha a explicação correta sobre o conceito de Hoisting.",
@@ -57,7 +57,7 @@
             },
             {
              
-                id: 9,
+                id: 5,
                 type: "Múltipla Escolha",
                 title: "Qual é a diferença entre == e === em JavaScript?",
                 description: "Selecione a explicação correta sobre esses operadores de comparação.",

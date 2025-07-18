@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login</title>
-  <link rel="stylesheet" href="login.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
-
-  <header class="header">
+    
+      <header class="header">
         <div class="container">
          
             <nav>
@@ -17,10 +17,10 @@
                         <a href="#perfil" class="nav-link" data-section="perfil">Perfil</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#vagas" class="nav-link" data-section="vagas">Vagas</a>
+                        <a href="vagas.html" class="nav-link" data-section="vagas">Vagas</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#testes" class="nav-link" data-section="testes">Testes</a>
+                        <a href="pgteste.html" class="nav-link" data-section="testes">Testes</a>
                     </li>
                 </ul>
                 <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -37,44 +37,51 @@
 
           
             <div class="auth-buttons">
-                <button class="btn btn-login" onclick="handleLogin()">Log in</button>
-                <button class="btn btn-register" onclick="handleRegister()">Register</button>
+              <a href="login.html"> <button class="btn btn-login" onclick="handleLogin()">Login</button></a>
+               <a href="cadastro.html"> <button class="btn btn-register" onclick="handleRegister()">Cadastre-se</button></a>
             </div>
         </div>
     </header>
 
-  <main>
-    <div class="login-container">
-      <h2>Bem-vindo de volta</h2>
+    <main>
+    <div class="form-container">
+        <form>
+            <h2>LOGIN</h2>
 
-      <p>Faça login para continuar</p>
-
-      <div class="divider"><span>OU</span></div>
-
-      <form>
-        <input type="text" placeholder="Email ou nome de usuário" required />
-        <input type="password" placeholder="Senha" required />
-        <a href="#">Esqueceu sua senha?</a>
-        <button type="submit">Entrar</button>
-      </form>
-    </div>
-  </main>
-
-  <footer class="footer">
+            <div class="input-box">
+                <input placeholder="Celular ou e-mail" type="email">
+            </div>
+            <div class="input-box">
+                <input placeholder="Senha" type="password">
+            </div>
+            <div class="remember-forgot">
+                <label>
+                    <input type="checkbox"> Lembrar senha
+                </label>
+            </div>
+            
+          <a href="vagas.html"><button type="submit">Login</button></a>
+            
+            <div class="register-link">
+                <p>Não tem conta? <a href="cadastro.html">Cadastre-se</a></p>
+            </div>
+        </form>
+    </main>
+ <footer class="footer">
         <div class="footer-container">
             <div class="footer-content">
                 <div class="footer-column">
                     <h4>Sou</h4>
                     <ul>
-                        <li><a href="#">Minhas Candidaturas</a></li>
-                        <li><a href="#">Currículo</a></li>
+                        <li><a href="vagas.html">Minhas Candidaturas</a></li>
+                        <li><a href="curriculo.html">Currículo</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Empresa</h4>
                     <ul>
-                        <li><a href="#">Vagas</a></li>
-                        <li><a href="#">Testes</a></li>
+                        <li><a href="vagas.html">Vagas</a></li>
+                        <li><a href="pgteste.html">Testes</a></li>
                     </ul>
                 </div>
             </div>
@@ -89,6 +96,6 @@
             </div>
         </div>
     </footer>
-    
+
 </body>
 </html>
